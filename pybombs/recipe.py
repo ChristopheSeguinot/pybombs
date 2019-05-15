@@ -351,7 +351,7 @@ class Recipe(object):
                 return var_dict.get(var_name)
             try:
                 return str(cfg.get(var_name))
-            except PBException as ex:
+            except PBException:
                 raise PBException("Could not expand variable {0}.".format(var_name_dollar))
         ###
         # Starts with a $, unless preceded by \
